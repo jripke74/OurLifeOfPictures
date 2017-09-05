@@ -11,4 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    // used for main storyboard
+    var window: UIWindow?
+    
 }
