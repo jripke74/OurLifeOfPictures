@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		894F9EB11F608CB600CB4E33 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F9EB01F608CB600CB4E33 /* MasterViewController.swift */; };
+		894F9EB31F608D6900CB4E33 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F9EB21F608D6900CB4E33 /* Model.swift */; };
+		894F9EB51F608E7500CB4E33 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F9EB41F608E7500CB4E33 /* Picture.swift */; };
 		899869BD1F5F21C400FE58C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899869BC1F5F21C400FE58C4 /* AppDelegate.swift */; };
-		899869BF1F5F21C400FE58C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899869BE1F5F21C400FE58C4 /* ViewController.swift */; };
 		899869C21F5F21C400FE58C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899869C01F5F21C400FE58C4 /* Main.storyboard */; };
 		899869C41F5F21C400FE58C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899869C31F5F21C400FE58C4 /* Assets.xcassets */; };
 		899869C71F5F21C400FE58C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899869C51F5F21C400FE58C4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		894F9EAF1F6088CC00CB4E33 /* OurLifeOfPictures.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OurLifeOfPictures.entitlements; sourceTree = "<group>"; };
+		894F9EB01F608CB600CB4E33 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		894F9EB21F608D6900CB4E33 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		894F9EB41F608E7500CB4E33 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		899869B91F5F21C400FE58C4 /* OurLifeOfPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurLifeOfPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		899869BC1F5F21C400FE58C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		899869BE1F5F21C400FE58C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		899869C11F5F21C400FE58C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		899869C31F5F21C400FE58C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899869C61F5F21C400FE58C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,12 +59,15 @@
 		899869BB1F5F21C400FE58C4 /* OurLifeOfPictures */ = {
 			isa = PBXGroup;
 			children = (
+				894F9EAF1F6088CC00CB4E33 /* OurLifeOfPictures.entitlements */,
 				899869BC1F5F21C400FE58C4 /* AppDelegate.swift */,
-				899869BE1F5F21C400FE58C4 /* ViewController.swift */,
+				894F9EB01F608CB600CB4E33 /* MasterViewController.swift */,
+				894F9EB21F608D6900CB4E33 /* Model.swift */,
 				899869C01F5F21C400FE58C4 /* Main.storyboard */,
 				899869C31F5F21C400FE58C4 /* Assets.xcassets */,
 				899869C51F5F21C400FE58C4 /* LaunchScreen.storyboard */,
 				899869C81F5F21C400FE58C4 /* Info.plist */,
+				894F9EB41F608E7500CB4E33 /* Picture.swift */,
 			);
 			path = OurLifeOfPictures;
 			sourceTree = "<group>";
@@ -98,6 +106,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 997RL2KYD9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				899869BF1F5F21C400FE58C4 /* ViewController.swift in Sources */,
+				894F9EB51F608E7500CB4E33 /* Picture.swift in Sources */,
+				894F9EB11F608CB600CB4E33 /* MasterViewController.swift in Sources */,
+				894F9EB31F608D6900CB4E33 /* Model.swift in Sources */,
 				899869BD1F5F21C400FE58C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OurLifeOfPictures/OurLifeOfPictures.entitlements;
 				DEVELOPMENT_TEAM = 997RL2KYD9;
 				INFOPLIST_FILE = OurLifeOfPictures/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -276,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OurLifeOfPictures/OurLifeOfPictures.entitlements;
 				DEVELOPMENT_TEAM = 997RL2KYD9;
 				INFOPLIST_FILE = OurLifeOfPictures/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -304,6 +321,7 @@
 				899869CD1F5F21C400FE58C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
