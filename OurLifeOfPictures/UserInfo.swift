@@ -20,4 +20,11 @@ class UserInfo {
     init (container: CKContainer) {
         self.container = container
     }
+    
+    func loggedInToIcloud(_ completion: (_ accountStatus: CKAccountStatus, _ error: NSError?) -> ()) {
+        // not yet implemented
+        completion(.couldNotDetermine, nil)
+    }
+    
+    
 }

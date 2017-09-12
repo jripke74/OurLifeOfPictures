@@ -39,4 +39,36 @@ class Model {
         privateDB = container.privateCloudDatabase
         userInfo = UserInfo(container: container)
     }
+    
+    @objc func refresh() {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Photograph", predicate: predicate)
+        publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    self.delegate?.errorUpdate(error! as NSError)
+                    print("Cloud Query Error - Refresh: \(String(describing: error))")
+                }
+                return
+            }
+            
+            self.items.removeAll(keepingCapacity: true)
+            
+            for record in results! {
+                let photograph = Photograph(record: record, database: self.publicDB)
+                self.items.append(photograph)
+            }
+            
+            DispatchQueue.main.async {
+                self.delegate?.modelUpdated()
+            }
+        }
+    }
+    
+    func photograph(_ ref: CKReference) -> Photograph! {
+        let matching = items.filter { $0.record.recordID == ref.recordID }
+        return matching.first
+    }
+    
+    
 }
