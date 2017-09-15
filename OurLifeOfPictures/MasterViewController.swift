@@ -33,7 +33,7 @@ class MasterViewController: UITableViewController {
         
         // Set up a refresh control
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(Model, action: #selector(Model.refresh), for: .valueChanged)
+        refreshControl?.addTarget(model, action: #selector(Model.refresh), for: .valueChanged)
         
         guard let splitViewController = splitViewController,
             let navigationController = splitViewController.viewControllers.last as? UINavigationController,
@@ -67,12 +67,42 @@ extension MasterViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PhotographCell
         let object = Model.sharedInstance.items[(indexPath as NSIndexPath).row]
-        cell.titleLabel.text = object.name
+        cell.titleLabel.text = object.fileNameOfPhoto
         object.loadPhoto { (image) in
             DispatchQueue.main.async {
-                cell.photo.image = image
+                cell.photoView.image = image
             }
         }
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MasterViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard case(.pad) = traitCollection.userInterfaceIdiom else { return }
+        
+        let detailItem = Model.sharedInstance.items[(indexPath as NSIndexPath).row]
+        detaileViewController?.detailItem = detailItem
+    }
+}
+
+// MARK: - ModelDelgate
+extension MasterViewController: ModelDelegate {
+    
+    func modelUpdated() {
+        refreshControl?.endRefreshing()
+        tableView.reloadData()
+    }
+    
+    func errorUpdate(_ error: NSError) {
+        let message: String
+        if error.code == 1 {
+            message = "Log into iCloud on your device and make sure the iCloud is turned on for this app."
+        } else {
+            message = error.localizedDescription
+        }
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alertController, animated: true, completion: nil)
     }
 }

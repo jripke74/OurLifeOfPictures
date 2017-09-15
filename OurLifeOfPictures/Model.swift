@@ -19,7 +19,7 @@ protocol ModelDelegate {
 class Model {
     
     // MARK: - Properties
-    let photographType = "Photograph"
+    let PhotographType = "Photograph"
     static let sharedInstance = Model()
     var delegate: ModelDelegate?
     var items: [Photograph] = []
