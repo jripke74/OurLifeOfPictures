@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,30 +14,40 @@
         <scene sceneID="VLv-mP-AIw">
             <objects>
                 <tableViewController id="XzY-dl-7Ty" customClass="MasterViewController" customModule="OurLifeOfPictures" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vua-bh-fP7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="209" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vua-bh-fP7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="gMg-MW-SXq" customClass="PhotographCell" customModule="OurLifeOfPictures" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="209" id="gMg-MW-SXq" customClass="PhotographCell" customModule="OurLifeOfPictures" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="209"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMg-MW-SXq" id="irk-lY-r9p">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="208.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_1732-edited" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-0F-8sI">
-                                            <rect key="frame" x="0.0" y="0.0" width="115" height="88"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bQ-sY-yrj">
-                                            <rect key="frame" x="133" y="34" width="163" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bQ-sY-yrj">
+                                            <rect key="frame" x="305" y="90" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_1732-edited" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-0F-8sI">
+                                            <rect key="frame" x="8" y="4" width="200" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="2XH-42-0VC"/>
+                                                <constraint firstAttribute="width" constant="200" id="BLi-f2-wYf"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7bQ-sY-yrj" firstAttribute="leading" secondItem="bdK-0F-8sI" secondAttribute="trailing" constant="97" id="5Cg-eN-9Or"/>
+                                        <constraint firstItem="7bQ-sY-yrj" firstAttribute="top" secondItem="irk-lY-r9p" secondAttribute="topMargin" constant="82" id="6Sk-R2-ngx"/>
+                                        <constraint firstItem="bdK-0F-8sI" firstAttribute="top" secondItem="irk-lY-r9p" secondAttribute="top" constant="4" id="D9I-ga-rMG"/>
+                                        <constraint firstAttribute="bottom" secondItem="bdK-0F-8sI" secondAttribute="bottom" constant="4" id="TUZ-5J-0HQ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7bQ-sY-yrj" secondAttribute="bottom" constant="89.5" id="fUd-AY-7vc"/>
+                                        <constraint firstItem="bdK-0F-8sI" firstAttribute="leading" secondItem="irk-lY-r9p" secondAttribute="leading" constant="8" id="qrV-fr-VBO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="photoView" destination="bdK-0F-8sI" id="yXX-KI-OGU"/>
@@ -75,34 +86,6 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-07-oOc">
-                                                    <rect key="frame" x="88" y="8" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="163" id="Iij-En-iRO" customClass="PhotographCell" customModule="OurLifeOfPictures" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="163" width="375" height="163"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iij-En-iRO" id="38w-9c-YEr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djt-kQ-8I4">
-                                                    <rect key="frame" x="88" y="8" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="163" id="wQW-mz-iP5" customClass="PhotographCell" customModule="OurLifeOfPictures" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="326" width="375" height="163"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQW-mz-iP5" id="yl6-1T-8zl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-GN-t3e">
                                                     <rect key="frame" x="88" y="8" width="240" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
